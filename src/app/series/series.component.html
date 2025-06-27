@@ -1,0 +1,17 @@
+<div class="series-container" *ngIf="seriesList.length > 0; else loading">
+  <div *ngFor="let series of seriesList" class="series-card">
+    <h3>{{ series.name }}</h3>
+    <p><strong>Start:</strong> {{ series.startDate }}</p>
+    <p><strong>End:</strong> {{ series.endDate }}</p>
+    <div class="formats">
+      <span>ODIs: {{ series.odi }}</span>
+      <span>T20s: {{ series.t20 }}</span>
+      <span>Tests: {{ series.test }}</span>
+    </div>
+    <p><strong>Total Matches:</strong> {{ series.matches }}</p>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading cricket series...</p>
+</ng-template>

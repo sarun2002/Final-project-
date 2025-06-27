@@ -1,0 +1,33 @@
+<ng-template #loading>
+  <p class="loading">Loading live scores...</p>
+</ng-template>
+
+<div *ngIf="matches.length > 0; else loading">
+<div class="current-matches">
+  <div *ngFor="let match of matches" class="match-card">
+    <div class="match-header">
+      <h3>{{ match.name }}</h3>
+      <span class="status">{{ match.status }}</span>
+    </div>
+
+    <p class="meta">{{ match.matchType | uppercase }} | {{ match.date }} | {{ match.venue }}</p>
+
+    <div class="team-section">
+      <div class="team" *ngFor="let team of match.teamInfo">
+        <img [src]="team.img" alt="{{ team.name }}" />
+        <p>{{ team.name }}</p>
+      </div>
+    </div>
+
+    <div class="score-section">
+      <div *ngFor="let s of match.score" class="score">
+        <strong>{{ s.inning }}</strong>
+        <span>{{ s.r }}/{{ s.w }} ({{ s.o }} ov)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+    
+</style>

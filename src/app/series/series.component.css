@@ -1,0 +1,37 @@
+.series-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.series-card {
+  background: rgb(226, 221, 221);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.series-card:hover {
+  transform: scale(1.02);
+}
+
+.series-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.series-card p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+.formats {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}

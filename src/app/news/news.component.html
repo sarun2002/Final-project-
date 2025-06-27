@@ -1,0 +1,15 @@
+<div class="news-container" *ngIf="articles.length > 0; else loading">
+  <div *ngFor="let article of articles" class="news-card">
+    <img [src]="article.urlToImage" alt="Image" class="news-img" />
+    <div class="news-content">
+      <h3 class="news-title">{{ article.title }}</h3>
+      <p class="news-author">By {{ article.author || 'Unknown' }}</p>
+      <p class="news-published">{{ article.publishedAt | date:'medium' }}</p>
+      <a [href]="article.url" target="_blank" class="news-link">Read Full Article</a>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading news...</p>
+</ng-template>
